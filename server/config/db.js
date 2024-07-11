@@ -9,7 +9,7 @@ const db = createConnection({
     host: 'localhost',
     user: 'root',
     password: 'Mbf@1234',
-    database: 'crud_db',
+    database: 'single_track',
 });
 
 
