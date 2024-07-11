@@ -2,5 +2,35 @@ export interface SingleModel {
     username: string;
     email: string;
     password: string;
+    track_name: string;
+    track_series: string;
+    track_subtle: string;
+    track_soundTrack: string;
+    track_artist: string;
+    track_primaryArtist1: string;
+    track_spotify_uri: string;
+    track_apple_uri: string;
+    track_sound_cloud_url: string;
+    track_contributor_name1: string;
+    track_contributor_role1: string;
+    track_genre: string;
+    track_alt_genre: string;
+    track_sub_genre: string;
+    track_alt_genre2: string;
+    track_record_year: string;
+    track_org_date: string;
+    track_comm_date: string;
+    track_comm_time: string;
+    track_pre_date: string;
+    track_lang_1: string;
+    track_year_when: string;
+    track_copyright_year: string;
+    track_copyright_iconMusic: string;
+    track_copyright_3: string;
+    track_copyright_dist: string;
+    track_isrc: string;
+    song_file1: string;
+    track_upc: string;
+    track_catalogue: string;
+    song_file:string;
   }
-  

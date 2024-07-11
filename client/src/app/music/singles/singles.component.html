@@ -1012,11 +1012,11 @@
                                 class="border-upload-icon text-center d-flex flex-column align-items-center justify-content-center">
                                 <ng-icon name="featherUploadCloud" class="upload-icon-css"></ng-icon>
                             </span>
-                            <input id="song-file1" accept="image/png, image/gif, image/jpeg" type="file" name="song-file1" formControlName="song-file1">
-                            <label class="mt-3 text-link-green" for="song-file1">Click to upload <span
+                            <input id="song_file1" accept="image/png, image/gif, image/jpeg" type="file" name="song_file1" formControlName="song_file1">
+                            <label class="mt-3 text-link-green" for="song_file1">Click to upload <span
                                     class="text-css-lg mb-5">or drag<br /> drop your track’s cover.</span></label>
                         </div>
-                        @if (singlesForm.get('song-file1')?.invalid('required') && singlesForm.get('song-file1')?.touched ){
+                        @if (singlesForm.get('song_file1')?.invalid('required') && singlesForm.get('song_file1')?.touched ){
                             <div class="text-danger"><span>Track cover/Image is required</span></div>
                           }
                         <div class="bg-img-div mt-4">
@@ -1063,9 +1063,9 @@
             <span class="border-upload-icon text-center d-flex flex-column align-items-center justify-content-center">
                 <ng-icon name="featherUploadCloud" class="upload-icon-css"></ng-icon>
             </span>
-            <input id="song-file" accept=".wav" type="file" name="song-file" class="input-file" formControlName="song-file">
+            <input id="song_file" accept=".wav" type="file" name="song_file" class="input-file" formControlName="song_file">
             
-            <label class="mt-3 text-link-green label-upload" for="song-file" >
+            <label class="mt-3 text-link-green label-upload" for="song_file" >
                 Click to upload <span class="text-css-lg mb-5">or drag and drop
                     <span class="d-block mt-2">
                         Your track should be in WAV format with minimum audio quality specifications of 44.1 kHz 16 bit.
@@ -1074,7 +1074,7 @@
                 </span>
             </label>
             </div>
-            @if (singlesForm.get('song-file')?.invalid('required') && singlesForm.get('song-file')?.touched ){
+            @if (singlesForm.get('song_file')?.invalid('required') && singlesForm.get('song_file')?.touched ){
                 <div class="text-danger"><span>Song file is required</span></div>
               }
             <button type='submit' class="btn btn-color-css-submit mt-4" [disabled]="signupForm.invalid">Submit</button>

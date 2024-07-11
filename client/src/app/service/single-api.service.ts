@@ -1,6 +1,6 @@
 import {HttpClient} from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import User from '../types/user';
+import Model from '../model/singleModel'
 import { Observable } from 'rxjs';
 
 
@@ -10,19 +10,19 @@ import { Observable } from 'rxjs';
 })
 export class SingleApiService {
  
-  apiUrl="http://localhost:3030"
+  apiUrl="http://localhost:3030/api"
   httpClient=inject(HttpClient);
   constructor() { }
 
-  getUsers(): Observable<User[]>{
-    return this.httpClient.get<User[]>(this.apiUrl);
-  }
+  // getUsers(): Observable<User[]>{
+  //   return this.httpClient.get<User[]>(this.apiUrl);
+  // }
 
   // createUser(model:User) :Observable<void> {
   //   return this.httpClient.post<void>(this.apiUrl+'/create', model);
   // }
-  addUser(model: User): Observable<User> {
-    return this.httpClient.post<User>(`${this.apiUrl}/create`, model);
+  singlesForm(model: Model): Observable<Model> {
+    return this.httpClient.post<Model>(`${this.apiUrl}/create`, model);
   }
   
 
