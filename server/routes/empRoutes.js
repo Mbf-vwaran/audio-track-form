@@ -5,8 +5,8 @@ const router = express.Router();
 
 
 // 1. To get audio_singles details from DB 
-router.get('/api/get', (req, res) => {
-    const sql = "SELECT * FROM audio_singles";
+router.get('/', (req, res) => {
+    const sql = "SELECT * FROM track_audio";
     db.query(sql, (err, data) => {
       if (err) {
         res.status(500).json(`Error: ${err.message}`);
@@ -17,8 +17,8 @@ router.get('/api/get', (req, res) => {
   });
   
   // 2. To post/insert the audio_singles details into DB
-  router.post('/api/create', (req, res) => {
-    const sql = `INSERT INTO audio_singles (
+  router.post('/create', (req, res) => {
+    const sql = `INSERT INTO track_audio (
                    track_name,  
                    track_series, 
                    track_subtle,
@@ -46,10 +46,9 @@ router.get('/api/get', (req, res) => {
                    track_copyright_3,
                    track_copyright_dist,
                    track_isrc,
-                   song-file1,
                    track_upc,
-                   track_catalogue,
-                   song-file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+                   track_catalogue
+                   ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
   
     const values = [
       req.body.track_name,  
@@ -79,10 +78,9 @@ router.get('/api/get', (req, res) => {
       req.body.track_copyright_3,
       req.body.track_copyright_dist,
       req.body.track_isrc,
-      req.body.song-file1,
       req.body.track_upc,
-      req.body.track_catalogue,
-      req.body.song-file
+      req.body.track_catalogue
+
     ];
   
     db.query(sql, values, (err, data) => {
@@ -95,10 +93,18 @@ router.get('/api/get', (req, res) => {
   });
   
 
+  // track_isrc,
+  // //  song-file1,
+  //  track_upc,
+  //  track_catalogue,
+  // //  song-file
 
 
-
-
+  // req.body.track_isrc,
+  //     // req.body.song-file1,
+  //     req.body.track_upc,
+  //     req.body.track_catalogue,
+  //     // req.body.song-file
 
 
 

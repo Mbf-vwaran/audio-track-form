@@ -12,17 +12,13 @@
             <div class="col-sm-10">
                 <label for="track_name" class="d-block mt-5">What’s the name of your track?</label>
                 <input type="text" name="track_name" id="track_name" class="mt-1 input-css-1 mw-50" required  formControlName="track_name"/>
-                <!-- @if (singlesForm.get('track_name')?.invalid('required') && singlesForm.get('track_name')?.touched ){
-                    <div class="text-danger"><span>Track Name is required</span></div>
-                  } -->
+               
             </div>
             <div class="col-sm-10">
                 <label for="track_series" class="d-block mt-5">If this track is part of a series, then enter the series
                     number. (Optional)</label>
                 <input type="text" name="track_series" id="track_series" class="mt-1 input-css-1 mw-50" formControlName="track_series"/>
-                <!-- @if (singlesForm.get('track_series')?.invalid('required') && singlesForm.get('track_series')?.touched ){
-                    <div class="text-danger"><span>Track series is required</span></div>
-                  } -->
+               
             </div>
             <div class="col-sm-10">
                 <label for="track_subtle" class="d-block mt-5">What’s the subtitle/version of your track?
@@ -50,7 +46,7 @@
                     <div class="text-danger"><span>Artist’s name is required</span></div>
                   } -->
             </div>
-            <div class="col-sm-10 ">
+            <!-- <div class="col-sm-10 ">
                 <label class="mt-4">How would you describe this artist? </label>
                 <div class="form-check mt-3">
                     <input class="form-check-input " type="radio" name="track_primaryArtist1" id="track_primaryArtist1" checked formControlName="track_primaryArtist1" />
@@ -59,23 +55,23 @@
                         Primary Artist.
                         <span class="d-block text-css-lg">The name of the main performing artist or band.</span>
                     </label>
-                </div>
-                <div class="form-check mt-3">
+                </div> -->
+                <!-- <div class="form-check mt-3"> -->
                     <!-- one correction is there -->
-                    <input class="form-check-input" type="radio" name="track_primaryArtist2" id="track_primaryArtist2"  >
+                    <!-- <input class="form-check-input" type="radio" name="track_primaryArtist2" id="track_primaryArtist2"  > -->
                     <!-- @if (singlesForm.get('email')?.invalid('required') && singlesForm.get('email')?.touched ){
                         <div class="text-danger"><span>Email is required</span></div>
                       } -->
-                    <label class="form-check-label" for="track_primaryArtist2">
+                    <!-- <label class="form-check-label" for="track_primaryArtist2">
                         Featuring Artist.
                         <span class="d-block text-css-lg">Special guest(s) with a significantcontribution but not
                             significant<br /> enough to be given the Primary role.</span>
-                    </label>
+                    </label> -->
                     <!-- @if (singlesForm.get('track_primaryArtist1')?.invalid('required') && singlesForm.get('track_primaryArtist1')?.touched ){
                         <div class="text-danger"><span>Describe about the Artist is required</span></div>
                       } -->
-                </div>
-            </div>
+                <!-- </div> -->
+            <!-- </div> -->
             <div class="col-sm-10">
                 <label for="track_spotify_uri" class="d-block mt-4">Enter this artist’s Spotify Artist URI. (Optional)
                 </label>
@@ -447,7 +443,7 @@
             <div class="col-sm-10">
                 <label for="track_comm_time" class="d-block mt-4">What’s the commercial or consumer release time of this
                     track? (Optional)</label>
-                <input type="time" name="track_comm_time" id="" class="mt-1 input-css-1 css-content-mod mw-50"
+                <input type="time" name="track_comm_time" id="track_comm_time" class="mt-1 input-css-1 css-content-mod mw-50"
                     placeholder="Choose a time" formControlName="track_comm_time"/>
                     <!-- @if (singlesForm.get('track_comm_time')?.invalid('required') && singlesForm.get('track_comm_time')?.touched ){
                         <div class="text-danger"><span>commercial or consumer release time is required</span></div>
@@ -693,7 +689,7 @@
             <div class="col-sm-10">
                 <label for="track_copyright_year" class="d-block mt-5">What’s the © copyright year for this track?
                 </label>
-                <select class="form-select mt-1 input-css-1 mw-50" aria-label="Default select example" required name="track_copyright_year" id="track_copyright_year" formControlName="track_copyright_year">
+                <select class="form-select mt-1 input-css-1 mw-50" aria-label="Default select example"  name="track_copyright_year" id="track_copyright_year" formControlName="track_copyright_year">
                     <option value="" disabled selected>Choose a year.</option>
                     <option value="2024">2024</option>
                     <option value="2023">2023</option>
@@ -821,17 +817,13 @@
                     <option value="1901">1901</option>
                     <option value="1900">1900</option>
                 </select>
-                <!-- @if (singlesForm.get('track_copyright_year')?.invalid('required') && singlesForm.get('track_copyright_year')?.touched ){
-                    <div class="text-danger"><span>copyright year is required</span></div>
-                  } -->
+                
             </div>
             <div class="col-sm-10">
                 <label for="track_copyright_iconMusic" class="d-block mt-4">Enter your © copyright text. Ex: © 2024 Icon Music
                     Distribution Ltd.</label>
                 <input type="text" name="track_copyright_iconMusic" id="track_copyright_iconMusic" class="mt-1 input-css-1 mw-50" required formControlName="track_copyright_iconMusic"/>
-                <!-- @if (singlesForm.get('track_copyright_iconMusic')?.invalid('required') && singlesForm.get('track_copyright_iconMusic')?.touched ){
-                    <div class="text-danger"><span>copyright text is required</span></div>
-                  } -->
+               
             </div>
             <div class="col-sm-10">
                 <label for="track_copyright_3" class="d-block mt-4">What’s the © copyright year for this track?
@@ -1006,7 +998,7 @@
                     </div>
                     <div class="col-md-4">
                         <!-- <input type="file" name="track_name" id="" class="mt-1 input-css-1 mw-50" required /> -->
-                        <div
+                        <!-- <div
                             class="song-upload file-upload-css text-center d-flex flex-column align-items-center justify-content-center p-4">
                             <span
                                 class="border-upload-icon text-center d-flex flex-column align-items-center justify-content-center">
@@ -1015,7 +1007,7 @@
                             <input id="song_file1" accept="image/png, image/gif, image/jpeg" type="file" name="song_file1" formControlName="song_file1">
                             <label class="mt-3 text-link-green" for="song_file1">Click to upload <span
                                     class="text-css-lg mb-5">or drag<br /> drop your track’s cover.</span></label>
-                        </div>
+                        </div> -->
                         <!-- @if (singlesForm.get('song_file1')?.invalid('required') && singlesForm.get('song_file1')?.touched ){
                             <div class="text-danger"><span>Track cover/Image is required</span></div>
                           } -->
@@ -1058,7 +1050,7 @@
                   } -->
             </div>
             <h2 class="text-css-head1 mt-5 ">Let’s upload your track.</h2>
-            <div
+            <!-- <div
             class="col-md-8 file-upload-css1 text-center d-flex flex-column align-items-center justify-content-center p-4 mt-4">
             <span class="border-upload-icon text-center d-flex flex-column align-items-center justify-content-center">
                 <ng-icon name="featherUploadCloud" class="upload-icon-css"></ng-icon>
@@ -1073,11 +1065,12 @@
                     </span>
                 </span>
             </label>
-            </div>
+            </div> -->
             <!-- @if (singlesForm.get('song_file')?.invalid('required') && singlesForm.get('song_file')?.touched ){
                 <div class="text-danger"><span>Song file is required</span></div>
               } -->
-            <button type='submit' class="btn btn-color-css-submit mt-4" [disabled]="singlesForm.invalid">Submit</button>
+            <button  class="btn btn-color-css-submit mt-4" >Submit</button>
+            <!-- [disabled]="singlesForm.invalid" -->
         </form>
     </div>
 </div>
