@@ -11,9 +11,12 @@
             <h2 class="text-css-head mt-5">Let’s Amplify your Track!</h2>
             <div class="col-sm-10">
                 <label for="track_name" class="d-block mt-5">What’s the name of your track?</label>
-                <input type="text" name="track_name" id="track_name" class="mt-1 input-css-1 mw-50" required  formControlName="track_name"/>
-               
+                <input type="text" name="track_name" id="track_name" class="mt-1 input-css-1 mw-50" required  formControlName="track_name" />
+                 @if (singlesForm.get('track_name')?.hasError('required') && singlesForm.get('track_name')?.touched ){
+                    <div class="text-danger"><span>Subtitle/version is required</span></div>
+                  }
             </div>
+
             <div class="col-sm-10">
                 <label for="track_series" class="d-block mt-5">If this track is part of a series, then enter the series
                     number. (Optional)</label>
@@ -23,8 +26,8 @@
             <div class="col-sm-10">
                 <label for="track_subtle" class="d-block mt-5">What’s the subtitle/version of your track?
                     (Optional)</label>
-                <input type="text" name="track_subtle" id="track_subtle" class="mt-1 input-css-1 mw-50" formControlName="track_subtle"/>
-                <!-- @if (singlesForm.get('track_subtle')?.invalid('required') && singlesForm.get('track_subtle')?.touched ){
+                <input type="text" name="track_subtle" id="track_subtle" class="mt-1 input-css-1 mw-50" formControlName="track_subtle" />
+                <!-- @if (singlesForm.get('track_subtle')?.hasError('required') && singlesForm.get('track_subtle')?.touched ){
                     <div class="text-danger"><span>Subtitle/version is required</span></div>
                   } -->
             </div>
@@ -32,8 +35,8 @@
                 <label for="track_soundTrack" class="d-block mt-5">If this track is a soundtrack or score, then enter that
                     info here. (Optional)
                 </label>
-                <input type="text" name="track_soundTrack" id="track_soundTrack" class="mt-1 input-css-1 mw-50" formControlName="track_soundTrack"/>
-                <!-- @if (singlesForm.get('track_soundTrack')?.invalid('required') && singlesForm.get('track_soundTrack')?.touched ){
+                <input type="text" name="track_soundTrack" id="track_soundTrack" class="mt-1 input-css-1 mw-50" formControlName="track_soundTrack" />
+                <!-- @if (singlesForm.get('track_soundTrack')?.hasError('required') && singlesForm.get('track_soundTrack')?.touched ){
                     <div class="text-danger"><span>sound track is required</span></div>
                   } -->
             </div>
@@ -41,10 +44,10 @@
             <div class="col-sm-10">
                 <label for="track_artist" class="d-block mt-4">What’s this artist’s name?
                 </label>
-                <input type="text" name="track_artist" id="track_artist" class="mt-1 input-css-1 mw-50" required formControlName="track_artist"/>
-                <!-- @if (singlesForm.get('track_artist')?.invalid('required') && singlesForm.get('track_artist')?.touched ){
+                <input type="text" name="track_artist" id="track_artist" class="mt-1 input-css-1 mw-50" required formControlName="track_artist" />
+                @if (singlesForm.get('track_artist')?.hasError('required') && singlesForm.get('track_artist')?.touched ){
                     <div class="text-danger"><span>Artist’s name is required</span></div>
-                  } -->
+                  }
             </div>
             <div class="col-sm-10">
                 <label class="mt-4">How would you describe this artist? </label>
@@ -63,20 +66,20 @@
                   </label>
                 </div>
               </div>
-              
+              <!-- @if (singlesForm.get('track_primaryArtist1')?.hasError('required') && singlesForm.get('track_primaryArtist1')?.touched ){
+                <div class="text-danger"><span>Artist’s Spotify Artist URI is required</span></div>
+              } -->
             <div class="col-sm-10">
                 <label for="track_spotify_uri" class="d-block mt-4">Enter this artist’s Spotify Artist URI. (Optional)
                 </label>
                 <input type="text" name="track_spotify_uri" id="track_spotify_uri" class="mt-1 input-css-1 mw-50" formControlName="track_spotify_uri"/>
-                <!-- @if (singlesForm.get('track_primaryArtist1')?.invalid('required') && singlesForm.get('track_primaryArtist1')?.touched ){
-                    <div class="text-danger"><span>Artist’s Spotify Artist URI is required</span></div>
-                  } -->
+                
             </div>
             <div class="col-sm-10">
                 <label for="track_apple_uri" class="d-block mt-4">Apple Artist URL (Optional)
                 </label>
                 <input type="text" name="track_apple_uri" id="track_apple_uri" class="mt-1 input-css-1 mw-50" formControlName="track_apple_uri"/>
-                <!-- @if (singlesForm.get('track_apple_uri')?.invalid('required') && singlesForm.get('track_apple_uri')?.touched ){
+                <!-- @if (singlesForm.get('track_apple_uri')?.hasError('required') && singlesForm.get('track_apple_uri')?.touched ){
                     <div class="text-danger"><span>Apple Artist URL is required</span></div>
                   } -->
             </div>
@@ -84,7 +87,7 @@
                 <label for="track_sound_cloud_url" class="d-block mt-4">SoundCloud Music Artist URL (Optional)
                 </label>
                 <input type="text" name="track_sound_cloud_url" id="track_sound_cloud_url" class="mt-1 input-css-1 mw-50" formControlName="track_sound_cloud_url"/>
-                <!-- @if (singlesForm.get('track_sound_cloud_url')?.invalid('required') && singlesForm.get('track_sound_cloud_url')?.touched ){
+                <!-- @if (singlesForm.get('track_sound_cloud_url')?.hasError('required') && singlesForm.get('track_sound_cloud_url')?.touched ){
                     <div class="text-danger"><span>SoundCloud Music Artist URL is required</span></div>
                   } -->
                 <button class="btn btn-color-css mt-5">Save this Artist</button>
@@ -94,9 +97,9 @@
                 <label for="track_contributor_name1" class="d-block mt-4">What’s this contributor’s name?
                 </label>
                 <input type="text" name="track_contributor_name1" id="track_contributor_name1" class="mt-1 input-css-1 mw-50" required formControlName="track_contributor_name1"/>
-                <!-- @if (singlesForm.get('track_contributor_name1')?.invalid('required') && singlesForm.get('track_contributor_name1')?.touched ){
+                @if (singlesForm.get('track_contributor_name1')?.hasError('required') && singlesForm.get('track_contributor_name1')?.touched ){
                     <div class="text-danger"><span>ontributor’s name is required</span></div>
-                  } -->
+                  }
             </div>
             <div class="col-sm-10">
                 <label for="track_contributor_role1" class="d-block mt-4">Contributor’s Role
@@ -187,9 +190,9 @@
                     <option value="VOCAL_ENGINEER"> Vocal Engineer </option>
                     <option value="VOCAL_PRODUCER"> Vocal Producer </option>
                 </select>
-                <!-- @if (singlesForm.get('track_contributor_role1')?.invalid('required') && singlesForm.get('track_contributor_role1')?.touched ){
+                @if (singlesForm.get('track_contributor_role1')?.hasError('required') && singlesForm.get('track_contributor_role1')?.touched ){
                     <div class="text-danger"><span>Contributor’s Role is required</span></div>
-                  } -->
+                  }
                 <button class="btn btn-color-css mt-5">Save this Contributor</button>
             </div>
             <div class="col-sm-10">
@@ -223,9 +226,9 @@
                     <option value="VOCAL">Vocal</option>
                     <option value="WORLD">World</option>
                 </select>
-                <!-- @if (singlesForm.get('track_genre')?.invalid('required') && singlesForm.get('track_genre')?.touched ){
+                @if (singlesForm.get('track_genre')?.hasError('required') && singlesForm.get('track_genre')?.touched ){
                     <div class="text-danger"><span>Genre is required</span></div>
-                  } -->
+                  }
             </div>
             <div class="col-sm-10">
                 <label for="track_alt_genre" class="d-block mt-4">Enter an alternate genre. (Optional)
@@ -258,7 +261,7 @@
                     <option value="VOCAL">Vocal</option>
                     <option value="WORLD">World</option>
                 </select>
-                <!-- @if (singlesForm.get('track_alt_genre')?.invalid('required') && singlesForm.get('track_alt_genre')?.touched ){
+                <!-- @if (singlesForm.get('track_alt_genre')?.hasError('required') && singlesForm.get('track_alt_genre')?.touched ){
                     <div class="text-danger"><span>alternate genre is required</span></div>
                   } -->
             </div>
@@ -266,7 +269,7 @@
                 <label for="track_sub_genre" class="d-block mt-4">What subgenre does this track belong to? (Optional)
                 </label>
                 <input type="text" name="track_sub_genre" id="track_sub_genre" class="mt-1 input-css-1 mw-50" formControlName="track_sub_genre"/>
-                <!-- @if (singlesForm.get('track_sub_genre')?.invalid('required') && singlesForm.get('track_sub_genre')?.touched ){
+                <!-- @if (singlesForm.get('track_sub_genre')?.hasError('required') && singlesForm.get('track_sub_genre')?.touched ){
                     <div class="text-danger"><span>subgenre is required</span></div>
                   } -->
             </div>
@@ -274,7 +277,7 @@
                 <label for="track_alt_genre2" class="d-block mt-4">Enter an alternate Subgenre. (Optional)
                 </label>
                 <input type="text" name="track_alt_genre2" id="track_alt_genre2" class="mt-1 input-css-1 mw-50" formControlName="track_alt_genre2"/>
-                <!-- @if (singlesForm.get('track_alt_genre2')?.invalid('required') && singlesForm.get('track_alt_genre2')?.touched ){
+                <!-- @if (singlesForm.get('track_alt_genre2')?.hasError('required') && singlesForm.get('track_alt_genre2')?.touched ){
                     <div class="text-danger"><span>Alternate Subgenre is required</span></div>
                   } -->
             </div>
@@ -409,7 +412,7 @@
                     <option value="1901">1901</option>
                     <option value="1900">1900</option>
                 </select>
-                <!-- @if (singlesForm.get('track_record_year')?.invalid('required') && singlesForm.get('track_record_year')?.touched ){
+                <!-- @if (singlesForm.get('track_record_year')?.hasError('required') && singlesForm.get('track_record_year')?.touched ){
                     <div class="text-danger"><span>Track recorded Year is required</span></div>
                   } -->
             </div>
@@ -418,7 +421,7 @@
                 </label>
                 <input type="date" name="track_org_date" id="track_org_date" class="mt-1 input-css-1 css-content-mod mw-50"
                     placeholder="Choose a Date" required formControlName="track_org_date"/>
-                    <!-- @if (singlesForm.get('track_org_date')?.invalid('required') && singlesForm.get('track_org_date')?.touched ){
+                    <!-- @if (singlesForm.get('track_org_date')?.hasError('required') && singlesForm.get('track_org_date')?.touched ){
                         <div class="text-danger"><span>original release date is required</span></div>
                       } -->
             </div>
@@ -428,7 +431,7 @@
                 </label>
                 <input type="date" name="track_comm_date" id="track_comm_date" class="mt-1 input-css-1 css-content-mod mw-50"
                     placeholder="Choose a Date" required formControlName="track_comm_date"/>
-                    <!-- @if (singlesForm.get('track_comm_date')?.invalid('required') && singlesForm.get('track_comm_date')?.touched ){
+                    <!-- @if (singlesForm.get('track_comm_date')?.hasError('required') && singlesForm.get('track_comm_date')?.touched ){
                         <div class="text-danger"><span>commercial or consumer release date is required</span></div>
                       } -->
             </div>
@@ -437,7 +440,7 @@
                     track? (Optional)</label>
                 <input type="time" name="track_comm_time" id="track_comm_time" class="mt-1 input-css-1 css-content-mod mw-50"
                     placeholder="Choose a time" formControlName="track_comm_time"/>
-                    <!-- @if (singlesForm.get('track_comm_time')?.invalid('required') && singlesForm.get('track_comm_time')?.touched ){
+                    <!-- @if (singlesForm.get('track_comm_time')?.hasError('required') && singlesForm.get('track_comm_time')?.touched ){
                         <div class="text-danger"><span>commercial or consumer release time is required</span></div>
                       } -->
             </div>
@@ -445,7 +448,7 @@
                 <label for="track_pre_date" class="d-block mt-4">What’s the preorder date? (Optional)</label>
                 <input type="date" name="track_pre_date" id="track_pre_date" class="mt-1 input-css-1 css-content-mod mw-50"
                   placeholder="Choose a Date" formControlName="track_pre_date"/>
-                  <!-- @if (singlesForm.get('track_pre_date')?.invalid('required') && singlesForm.get('track_pre_date')?.touched ){
+                  <!-- @if (singlesForm.get('track_pre_date')?.hasError('required') && singlesForm.get('track_pre_date')?.touched ){
                     <div class="text-danger"><span>preorder date is required</span></div>
                   } -->
             </div>
@@ -667,16 +670,16 @@
                     <option value="ZH">Chinese</option>
                     <option value="ZU">Zulu</option>
                 </select>
-                <!-- @if (singlesForm.get('track_lang_1')?.invalid('required') && singlesForm.get('track_lang_1')?.touched ){
+                @if (singlesForm.get('track_lang_1')?.hasError('required') && singlesForm.get('track_lang_1')?.touched ){
                     <div class="text-danger"><span>Track language is required</span></div>
-                  } -->
+                  }
             </div>
             <div class="col-sm-10">
                 <label for="track_year_when" class="d-block mt-4">Where was this track recorded?</label>
                 <input type="text" name="track_year_when" id="track_year_when" class="mt-1 input-css-1 mw-50" required formControlName="track_year_when"/>
-                <!-- @if (singlesForm.get('track_year_when')?.invalid('required') && singlesForm.get('track_year_when')?.touched ){
+                @if (singlesForm.get('track_year_when')?.hasError('required') && singlesForm.get('track_year_when')?.touched ){
                     <div class="text-danger"><span>Track recorded is required</span></div>
-                  } -->
+                  }
             </div>
             <div class="col-sm-10">
                 <label for="track_copyright_year" class="d-block mt-5">What’s the © copyright year for this track?
@@ -948,31 +951,28 @@
                     <option value="1901">1901</option>
                     <option value="1900">1900</option>
                 </select>
-                <!-- @if (singlesForm.get('track_copyright_3')?.invalid('required') && singlesForm.get('track_copyright_3')?.touched ){
+                @if (singlesForm.get('track_copyright_3')?.hasError('required') && singlesForm.get('track_copyright_3')?.touched ){
                     <div class="text-danger"><span>copyright year is required</span></div>
-                  } -->
+                  }
             </div>
             <div class="col-sm-10">
                 <label for="track_copyright_dist" class="d-block mt-4">Enter your © copyright text. Ex: © 2024 Icon Music
                     Distribution Ltd.</label>
                 <input type="text" name="track_copyright_dist" id="track_copyright_dist" class="mt-1 input-css-1 mw-50" required formControlName="track_copyright_dist"/>
-                <!-- @if (singlesForm.get('track_copyright_dist')?.invalid('required') && singlesForm.get('track_copyright_dist')?.touched ){
+                @if (singlesForm.get('track_copyright_dist')?.hasError('required') && singlesForm.get('track_copyright_dist')?.touched ){
                     <div class="text-danger"><span>copyright text is required</span></div>
-                  } -->
+                  }
             </div>
             <div class="col-sm-10">
                 <label for="track_isrc" class="d-block mt-4">What’s the ISRC of this track?</label>
                 <input type="text" name="track_isrc" id="track_isrc" class="mt-1 input-css-1 mw-50" required formControlName="track_isrc"/>
-                <!-- @if (singlesForm.get('track_isrc')?.invalid('required') && singlesForm.get('track_isrc')?.touched ){
+                @if (singlesForm.get('track_isrc')?.hasError('required') && singlesForm.get('track_isrc')?.touched ){
                     <div class="text-danger"><span>ISRC is required</span></div>
-                  } -->
+                  }
                 <p class="mt-2 text-input-below-css">If you don’t have an ISRC for this track, <span
                         class="text-link-green"> here to get an ISRC.</span></p>
             </div>
-            <!-- <div class="input-group flex-nowrap mt-4">
-                    <span class="input-group-text" id="addon-wrapping">&#64;</span>
-                    <input type="text" class="form-control mt-1 input-css-1 mw-50" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
-                  </div> -->
+         
             <h2 class="text-css-head1 mt-5 ">Let’s upload your track’s cover</h2>
             <div class="container">
                 <div class="row mt-6 p-0">
@@ -1000,9 +1000,9 @@
                             <label class="mt-3 text-link-green" for="song_file1">Click to upload <span
                                     class="text-css-lg mb-5">or drag<br /> drop your track’s cover.</span></label>
                         </div>
-                        <!-- @if (singlesForm.get('song_file1')?.invalid('required') && singlesForm.get('song_file1')?.touched ){
+                        @if (singlesForm.get('song_file1')?.hasError('required') && singlesForm.get('song_file1')?.touched ){
                             <div class="text-danger"><span>Track cover/Image is required</span></div>
-                          } -->
+                          }
                         <div class="bg-img-div mt-4">
                             <div class="d-flex justify-content-center align-items-center position-relative ">
                                 <div class="">
@@ -1027,9 +1027,9 @@
                 <p class="mt-2 text-input-below-css text-css-lg">UPC / EAN barcodes identify products globally. If you
                     don’t have a UPC / EAN code for this album, <br /><span class="text-link-green"> click here to get
                         an EAN.</span></p>
-                        <!-- @if (singlesForm.get('track_upc')?.invalid('required') && singlesForm.get('track_upc')?.touched ){
+                        @if (singlesForm.get('track_upc')?.hasError('required') && singlesForm.get('track_upc')?.touched ){
                             <div class="text-danger"><span>UPC / EAN code is required</span></div>
-                          } -->
+                          }
             </div>
             <div class="col-sm-10">
                 <label for="track_catalogue" class="d-block mt-4">Do you have a catalogue number for this track?</label>
@@ -1037,9 +1037,9 @@
                 <p class="mt-2 text-input-below-css text-css-lg">If you do not have a catalogue number then enter your
                     UPC number above.
                 </p>
-                <!-- @if (singlesForm.get('track_catalogue')?.invalid('required') && singlesForm.get('track_catalogue')?.touched ){
+                @if (singlesForm.get('track_catalogue')?.hasError('required') && singlesForm.get('track_catalogue')?.touched ){
                     <div class="text-danger"><span>Catalogue number is required</span></div>
-                  } -->
+                  }
             </div>
             <h2 class="text-css-head1 mt-5 ">Let’s upload your track.</h2>
             <div
@@ -1058,11 +1058,11 @@
                 </span>
             </label>
             </div>
-            <!-- @if (singlesForm.get('song_file')?.invalid('required') && singlesForm.get('song_file')?.touched ){
+            @if (singlesForm.get('song_file')?.hasError('required') && singlesForm.get('song_file')?.touched ){
                 <div class="text-danger"><span>Song file is required</span></div>
-              } -->
-            <button  class="btn btn-color-css-submit mt-4" >Submit</button>
-            <!-- [disabled]="singlesForm.invalid" -->
+              }
+            <button class="btn btn-color-css-submit mt-4"  >Submit</button>
+            <!-- [disabled]="singlesForm.hasError" -->
         </form>
     </div>
 </div>
