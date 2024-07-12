@@ -5,6 +5,7 @@ import { featherUploadCloud} from '@ng-icons/feather-icons';
 import { inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
+import { SingleApiService } from '../../service/single-api.service';
 
 featherUploadCloud
 @Component({
@@ -19,9 +20,9 @@ export class SinglesComponent {
   router  =  inject(Router);
 
    singlesForm = new FormGroup({
-    track_name : new FormControl('', [Validators.required]),  
-    track_series: new FormControl('', [Validators.required]), 
-    track_subtle: new FormControl('', [Validators.required]),
+    track_name  : new FormControl('', [Validators.required]),  
+    track_series : new FormControl('', [Validators.required]), 
+    track_subtle : new FormControl('', [Validators.required]),
     track_soundTrack: new FormControl('', [Validators.required]),
     track_artist: new FormControl('', [Validators.required]),
     track_primaryArtist1: new FormControl('', [Validators.required]),
@@ -46,14 +47,29 @@ export class SinglesComponent {
     track_copyright_3: new FormControl('', [Validators.required]),
     track_copyright_dist: new FormControl('', [Validators.required]),
     track_isrc: new FormControl('', [Validators.required]),
-    song-file1: new FormControl('', [Validators.required]),
+    song_file1: new FormControl('', [Validators.required]),
     track_upc: new FormControl('', [Validators.required]),
     track_catalogue: new FormControl('', [Validators.required]),
-    song-file: new FormControl('', [Validators.required]),
-      name: new FormControl('', [Validators.required]),
-      email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required])
-  })
-  
+    song_file: new FormControl('', [Validators.required]),
+      
+   })
+  SingleApiService: any;
+
+   onSubmit() {
+    if (this.singlesForm.valid) {
+      console.log(this.singlesForm.value);
+      this.SingleApiService.singlesForm(this.singlesForm.value)
+        .subscribe({
+          next: (data: any) => {
+            console.log(data);
+            // this.router.navigate(['/']);
+            alert("singles from data send successfully")
+          },
+          error: (err: any) => console.log(err)
+        });
+    } else {
+      this.singlesForm.markAllAsTouched();
+    }
+  }
 
 }
