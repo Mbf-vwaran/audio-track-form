@@ -1,7 +1,7 @@
 import {HttpClient} from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import Single from '../model/singleModel'
-// import { Observable } from 'rxjs';
+// import Single from '../model/singleModel'
+import { Observable } from 'rxjs';
 
 
 
@@ -15,8 +15,12 @@ export class SingleApiService {
   
 constructor(private http: HttpClient) {}
 
-singlesForm(model: Single) {
-  return this.http.post(`${this.apiUrl}/create`, model);
+
+singlesForm(formData: FormData) {
+  return this.http.post(`${this.apiUrl}/create`, formData);
+}
+
+
 }
   // constructor() { }
 
@@ -33,7 +37,6 @@ singlesForm(model: Single) {
   //   return this.httpClient.post<void>(this.apiUrl+'/create', model);
   // }
 
-}
 
 
 

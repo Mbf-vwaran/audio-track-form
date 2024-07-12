@@ -27,8 +27,8 @@ export default interface SingleModel {
   track_copyright_3: string;
   track_copyright_dist: string;
   track_isrc: string;
-  // song_file1: File; 
+  song_file1: File; 
   track_upc: string;
   track_catalogue: string;
-  // song_file: File;
+  song_file: File;
 }
