@@ -16,6 +16,7 @@ import SingleModel from '../../model/singleModel';
   viewProviders: [provideIcons({ bootstrapArrowLeftSquareFill, bootstrapXCircleFill, featherUploadCloud })]
 })
 export class SinglesComponent {
+
   singlesForm: FormGroup;
   songFile1: File | null = null;
   songFile: File | null = null;
@@ -56,6 +57,19 @@ export class SinglesComponent {
     });
   }
 
+  // get ISRC code
+ track_isrc : string = '';
+ getIsrc(){
+  const countryCode : string = 'INB98'
+  const currentYear : number = new Date().getFullYear();
+  const updatedCode : number = 8;
+  const inc : number = updatedCode + 1;
+
+  const rightsHolderCode : string = ("00000" + inc.toString()).slice(-5);
+  this.track_isrc  = countryCode + (currentYear.toString().slice(-2)) + rightsHolderCode;
+  this.singlesForm.patchValue({ track_isrc: this.track_isrc });
+}
+
   onFileChange(event: Event, controlName: string) {
     const input = event.target as HTMLInputElement;
     if (input.files && input.files.length > 0) {
@@ -66,7 +80,7 @@ export class SinglesComponent {
       }
     }
   }
-
+ 
   onSubmit() {
     if (this.singlesForm.valid) {
       const formValues: SingleModel = this.singlesForm.value as SingleModel;
@@ -90,7 +104,7 @@ export class SinglesComponent {
         .subscribe({
           next: (data: any) => {
             console.log(data);
-            alert("Singles form data sent successfully");
+            this.router.navigate(['/success']);
           },
           error: (err: any) =>{ 
             console.log(err)

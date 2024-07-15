@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
 import { bootstrapArrowLeftSquareFill, bootstrapXCircleFill } from '@ng-icons/bootstrap-icons';
+// import { environment } from './../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,7 @@ import { bootstrapArrowLeftSquareFill, bootstrapXCircleFill } from '@ng-icons/bo
   styleUrl: './app.component.css',
   viewProviders: [provideIcons({bootstrapArrowLeftSquareFill, bootstrapXCircleFill})]
 })
+
 export class AppComponent {
   title = 'client';
 }

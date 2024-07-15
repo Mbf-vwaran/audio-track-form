@@ -1,0 +1,11 @@
+.success-icon-css{
+    display: block;
+    color: green;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+
+.success-text{
+    font-size: 18px;
+}

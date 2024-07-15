@@ -1,7 +1,8 @@
 import {HttpClient} from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-// import Single from '../model/singleModel'
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment.development';
+// import Single from '../model/singleModel'
 
 
 
@@ -9,15 +10,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SingleApiService {
- 
-  apiUrl="http://localhost:3000"
+  private API_URL= environment.API_URL;
   httpClient=inject(HttpClient);
   
 constructor(private http: HttpClient) {}
 
 
 singlesForm(formData: FormData) {
-  return this.http.post(`${this.apiUrl}/create`, formData);
+  return this.http.post(`${this.API_URL}/create`, formData);
 }
 
 

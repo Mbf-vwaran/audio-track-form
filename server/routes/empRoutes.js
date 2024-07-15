@@ -7,7 +7,7 @@ import fs from 'fs';
 const router = express.Router();
 
 // 1. To get audio_singles details from DB 
-router.get('/', (req, res) => {
+router.get('/api', (req, res) => {
   const sql = "SELECT * FROM track_audio";
   db.query(sql, (err, data) => {
     if (err) {
@@ -43,7 +43,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 // Route to handle file uploads and insert into DB
-router.post('/create', upload.fields([{ name: 'song_file', maxCount: 1 }, { name: 'song_file1', maxCount: 1 }]), (req, res) => {
+router.post('/api/create', upload.fields([{ name: 'song_file', maxCount: 1 }, { name: 'song_file1', maxCount: 1 }]), (req, res) => {
   // Check if req.files contains the expected fields
   if (!req.files || !req.files['song_file'] || !req.files['song_file'][0] || !req.files['song_file1'] || !req.files['song_file1'][0]) {
     return res.status(400).json('No files were uploaded.');
@@ -129,7 +129,7 @@ router.post('/create', upload.fields([{ name: 'song_file', maxCount: 1 }, { name
   });
 });
 
-router.delete('/delete/:id', (req, res) => {
+router.delete('/api/delete/:id', (req, res) => {
   const sql = `DELETE FROM track_audio WHERE id = ?`;
   const id = req.params.id;
 
