@@ -23,37 +23,37 @@ export class SinglesComponent {
 
   constructor(private router: Router, private singleApiService: SingleApiService) {
     this.singlesForm = new FormGroup({
-      track_name: new FormControl('', [Validators.required]),
+      track_name: new FormControl(''),
       track_series: new FormControl(''),
       track_subtle: new FormControl(''),
       track_soundTrack: new FormControl(''),
-      track_artist: new FormControl('', [Validators.required]),
-      track_primaryArtist1: new FormControl('Primary Artist', [Validators.required]),
+      track_artist: new FormControl(''),
+      track_primaryArtist1: new FormControl('Primary Artist'),
       track_spotify_uri: new FormControl(''),
       track_apple_uri: new FormControl(''),
       track_sound_cloud_url: new FormControl(''),
-      track_contributor_name1: new FormControl('', [Validators.required]),
-      track_contributor_role1: new FormControl('', [Validators.required]),
-      track_genre: new FormControl('', [Validators.required]),
+      track_contributor_name1: new FormControl(''),
+      track_contributor_role1: new FormControl(''),
+      track_genre: new FormControl(''),
       track_alt_genre: new FormControl(''),
       track_sub_genre: new FormControl(''),
       track_alt_genre2: new FormControl(''),
-      track_record_year: new FormControl('', [Validators.required]),
-      track_org_date: new FormControl('', [Validators.required]),
-      track_comm_date: new FormControl('', [Validators.required]),
+      track_record_year: new FormControl(''),
+      track_org_date: new FormControl(''),
+      track_comm_date: new FormControl(''),
       track_comm_time: new FormControl(''),
       track_pre_date: new FormControl(''),
-      track_lang_1: new FormControl('', [Validators.required]),
-      track_year_when: new FormControl('', [Validators.required]),
-      track_copyright_year: new FormControl('', [Validators.required]),
-      track_copyright_iconMusic: new FormControl('', [Validators.required]),
-      track_copyright_3: new FormControl('', [Validators.required]),
-      track_copyright_dist: new FormControl('', [Validators.required]),
-      track_isrc: new FormControl('', [Validators.required]),
-      song_file1: new FormControl('', [Validators.required]),
-      track_upc: new FormControl('', [Validators.required]),
-      track_catalogue: new FormControl('', [Validators.required]),
-      song_file: new FormControl('', [Validators.required]),
+      track_lang_1: new FormControl(''),
+      track_year_when: new FormControl(''),
+      track_copyright_year: new FormControl(''),
+      track_copyright_iconMusic: new FormControl(''),
+      track_copyright_3: new FormControl(''),
+      track_copyright_dist: new FormControl(''),
+      track_isrc: new FormControl(''),
+      song_file1: new FormControl(''),
+      track_upc: new FormControl(''),
+      track_catalogue: new FormControl(''),
+      song_file: new FormControl(''),
     });
   }
 
@@ -106,10 +106,7 @@ export class SinglesComponent {
             console.log(data);
             this.router.navigate(['/success']);
           },
-          error: (err: any) =>{ 
-            console.log(err)
-            alert(err);
-          }
+          error: (err: any) => console.log(err)
         });
     } 
   }
